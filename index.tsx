@@ -2,6 +2,7 @@
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 import { h, html } from "https://deno.land/x/htm@0.0.10/mod.tsx";
 import { UnoCSS } from "https://deno.land/x/htm@0.0.10/plugins.ts";
+import {Button} from './button.tsx'
 
 // enable UnoCSS
 html.use(UnoCSS())
@@ -15,6 +16,7 @@ const handler = (req: Request) => html({
     >
       <h1 class="text-4xl font-bold">Hello World!</h1>
       <p class="mt-2 text-lg text-center text-gray-600">Develop Locally, Deploy Globally</p>
+      <Button onClick={console.log} />
       <footer class="fixed bottom-8 w-full h-6 flex items-center justify-center gap-2 text-gray-800">
         Powered by
         <a
